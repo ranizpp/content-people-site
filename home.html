@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Content People | The Growth Partner for Scaling Businesses & SMEs</title>
+<meta name="description" content="Content People connects capital, technology and brand into one sustainable growth strategy for scaling businesses and SMEs.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #13212E;
+    --ink-2: #1B2C3B;
+    --paper: #F6F7F5;
+    --white: #FFFFFF;
+    --stone: #DDE1DE;
+    --mist: #5F6E7A;
+    --brass: #8F6A00;
+    --brass-soft: #F8C200;
+    --on-ink: #E9EDEF;
+    --on-ink-dim: #9AA8B3;
+    --line-ink: rgba(233, 237, 239, 0.14);
+
+    --font: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --wrap: none;
+    --gutter: clamp(20px, 4.5vw, 88px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--white); padding: 8px 14px; z-index: 100; }
+  .skip:focus { left: 8px; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line-ink);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--white);
+    font-weight: 600; font-size: 18px; letter-spacing: -0.01em;
+  }
+  .brand-mark { width: 26px; height: 26px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a {
+    color: var(--on-ink-dim); text-decoration: none; font-size: 15px;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a[aria-current="page"] { color: var(--white); box-shadow: inset 0 -1px 0 var(--brass-soft); padding-bottom: 4px; }
+  .nav-links a.btn { color: var(--ink); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 48px; padding: 0 24px;
+    font: 500 15px/1 var(--font);
+    text-decoration: none; border-radius: 2px; border: 1px solid transparent;
+    transition: background .2s, color .2s, border-color .2s;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--white); color: var(--ink); }
+  .btn-primary:hover { background: var(--brass-soft); }
+  .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.28); }
+  .btn-ghost:hover { border-color: var(--white); }
+  .btn-sm { height: 40px; padding: 0 18px; font-size: 14px; }
+
+  .menu-toggle {
+    display: none; background: none; border: 0; color: var(--white);
+    width: 44px; height: 44px; cursor: pointer; padding: 10px;
+  }
+  .menu-toggle span { display: block; height: 1.5px; background: currentColor; margin: 6px 0; transition: transform .25s, opacity .25s; }
+  .menu-open .menu-toggle span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+  .menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  /* ---------- Hero ---------- */
+  .hero { background: var(--ink); color: var(--on-ink); padding: clamp(64px, 10vw, 128px) 0 clamp(72px, 10vw, 120px); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+  .hero h1 {
+    margin: 0 0 28px;
+    font-size: clamp(38px, 4.4vw, 58px);
+    line-height: 1.04; letter-spacing: -0.035em; font-weight: 600;
+    color: var(--white);
+    max-width: 16ch;
+  }
+  .hero-sub { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.65; color: var(--on-ink-dim); max-width: 50ch; margin: 0 0 40px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .flow { width: 100%; height: auto; }
+  .flow .stream { fill: none; stroke: rgba(233,237,239,.38); stroke-width: 1.25; }
+  .flow .growth { fill: none; stroke: var(--brass-soft); stroke-width: 2; }
+  .flow .dot { fill: var(--ink); stroke: rgba(233,237,239,.6); stroke-width: 1.25; }
+  .flow .node { fill: var(--brass-soft); }
+  .flow .ring { fill: none; stroke: var(--brass-soft); stroke-opacity: .35; }
+  .flow text { font-family: var(--font); font-size: 14px; fill: var(--on-ink-dim); }
+  .flow text.end { fill: var(--brass-soft); font-weight: 500; }
+  .flow .grid-line { stroke: rgba(233,237,239,.06); stroke-width: 1; }
+
+  .flow .stream, .flow .growth { stroke-dasharray: 700; stroke-dashoffset: 700; animation: draw 1.6s cubic-bezier(.6,.1,.2,1) forwards; }
+  .flow .growth { animation-delay: 1.1s; animation-duration: 1.2s; }
+  .flow .fade { opacity: 0; animation: fade .6s ease forwards; }
+  .flow .fade.late { animation-delay: 2.1s; }
+  .flow .fade.mid { animation-delay: 1s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+
+  /* ---------- Clients ---------- */
+  .clients { background: var(--white); border-bottom: 1px solid var(--stone); }
+  .clients-row { display: flex; align-items: center; gap: 48px; padding-top: 30px; padding-bottom: 30px; }
+  .clients-label { font-size: 14px; color: var(--mist); white-space: nowrap; }
+  .logos { display: flex; align-items: center; gap: 44px; flex-wrap: wrap; flex: 1; justify-content: space-between; }
+  .logos img { height: 26px; width: auto; filter: grayscale(1); opacity: .55; transition: opacity .2s; }
+  .logos img:hover { opacity: .9; }
+
+  /* ---------- Section shared ---------- */
+  section.block { padding: clamp(80px, 11vw, 136px) 0; }
+  .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: clamp(48px, 6vw, 72px); }
+  .section-head h2 {
+    margin: 0; font-size: clamp(32px, 3.8vw, 48px); line-height: 1.1;
+    letter-spacing: -0.03em; font-weight: 600; max-width: 18ch;
+  }
+  .section-head p { margin: 0; color: var(--mist); max-width: 46ch; justify-self: end; }
+
+  /* ---------- Pillars ---------- */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--white); border: 1px solid var(--stone); }
+  .pillar {
+    position: relative; padding: 44px 40px 40px;
+    display: flex; flex-direction: column;
+    border-right: 1px solid var(--stone);
+    transition: background .25s;
+  }
+  .pillar:last-child { border-right: 0; }
+  .pillar::before {
+    content: ""; position: absolute; left: -1px; right: -1px; top: -1px; height: 2px;
+    background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .35s ease;
+  }
+  .pillar:hover::before, .pillar:focus-within::before { transform: scaleX(1); }
+  .pillar-icon { width: 44px; height: 44px; margin-bottom: 40px; color: var(--ink); }
+  .pillar h3 { margin: 0 0 6px; font-size: 24px; letter-spacing: -0.02em; font-weight: 600; line-height: 1.2; }
+  .pillar .kicker { margin: 0 0 22px; color: var(--brass); font-size: 15px; font-weight: 500; }
+  .pillar p.body { margin: 0 0 36px; color: var(--mist); font-size: 16px; line-height: 1.7; }
+  .text-link {
+    margin-top: auto; align-self: flex-start;
+    font-weight: 500; font-size: 15px; text-decoration: none;
+    padding-bottom: 4px; border-bottom: 1px solid var(--ink);
+    transition: color .2s, border-color .2s;
+  }
+  .text-link:hover { color: var(--brass); border-color: var(--brass); }
+  .pillar .text-link::after { content: ""; position: absolute; inset: 0; }
+
+  /* ---------- Why ---------- */
+  .why { background: var(--white); border-top: 1px solid var(--stone); }
+  .why-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 7vw, 104px); }
+  .why-intro h2 { margin: 0 0 22px; font-size: clamp(32px, 3.8vw, 48px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 600; }
+  .why-intro p { margin: 0; color: var(--mist); max-width: 40ch; }
+  .why-intro { position: sticky; top: 120px; align-self: start; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 0; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--stone); }
+  .checks li { padding: 36px 32px 40px 0; border-bottom: 1px solid var(--stone); }
+  .checks li:nth-child(odd) { border-right: 1px solid var(--stone); }
+  .checks li:nth-child(even) { padding-left: 32px; padding-right: 0; }
+  .check { width: 22px; height: 22px; color: var(--brass); margin-bottom: 20px; }
+  .checks h3 { margin: 0 0 10px; font-size: 19px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.3; }
+  .checks p { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.7; }
+
+  /* ---------- CTA ---------- */
+  .cta { background: var(--ink); color: var(--on-ink); padding: clamp(80px, 10vw, 120px) 0; }
+  .cta-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: end; }
+  .cta h2 { margin: 0 0 20px; color: var(--white); font-size: clamp(34px, 4.2vw, 54px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 600; max-width: 16ch; }
+  .cta p { margin: 0; color: var(--on-ink-dim); max-width: 48ch; }
+  .cta-side { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  .nda { display: flex; gap: 14px; padding-top: 24px; border-top: 1px solid var(--line-ink); font-size: 14px; color: var(--on-ink-dim); line-height: 1.6; }
+  .nda svg { flex: none; width: 18px; height: 18px; color: var(--brass-soft); margin-top: 2px; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--ink-2); color: var(--on-ink-dim); padding: 72px 0 calc(32px + env(safe-area-inset-bottom, 0px)); font-size: 15px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 56px; border-bottom: 1px solid var(--line-ink); }
+  footer h4 { margin: 0 0 16px; color: var(--white); font-size: 15px; font-weight: 500; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  footer a { text-decoration: none; transition: color .2s; }
+  footer a:hover { color: var(--white); }
+  footer address { font-style: normal; line-height: 1.7; }
+  .foot-about p { max-width: 32ch; margin: 18px 0 0; }
+  .foot-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 28px; font-size: 14px; }
+  .foot-bottom nav { display: flex; gap: 24px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1000px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 560px; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: 0; border-bottom: 1px solid var(--stone); }
+    .pillar:last-child { border-bottom: 0; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-intro { position: static; }
+    .cta-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .section-head { grid-template-columns: 1fr; }
+    .section-head p { justify-self: start; }
+  }
+  @media (max-width: 860px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+      position: fixed; left: 0; right: 0; top: calc(76px + env(safe-area-inset-top, 0px));
+      flex-direction: column; align-items: flex-start; gap: 0;
+      background: var(--ink); padding: 8px var(--gutter) 28px;
+      border-bottom: 1px solid var(--line-ink);
+      transform: translateY(-8px); opacity: 0; visibility: hidden;
+      transition: opacity .2s, transform .2s, visibility .2s;
+    }
+    .menu-open .nav-links { transform: none; opacity: 1; visibility: visible; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 14px 0; font-size: 17px; border-bottom: 1px solid var(--line-ink); }
+    .nav-links a[aria-current="page"] { box-shadow: none; padding-bottom: 14px; color: var(--brass-soft); }
+    .nav-links li:last-child a { border: 0; margin-top: 20px; display: inline-flex; padding: 0 22px; }
+    .clients-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .logos { justify-content: flex-start; gap: 28px; }
+  }
+  @media (max-width: 640px) {
+    .checks { grid-template-columns: 1fr; }
+    .checks li, .checks li:nth-child(even) { padding: 32px 0; border-right: 0; }
+    .pillar { padding: 36px 24px; }
+    .foot-grid { grid-template-columns: 1fr; }
+    .hero-actions .btn { flex: 1 1 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .flow .stream, .flow .growth { animation: none; stroke-dashoffset: 0; }
+    .flow .fade { animation: none; opacity: 1; }
+    * { transition: none !important; }
+  }
+
+  /* ---------- Logo & footer additions ---------- */
+  .brand img { height: 60px; width: auto; display: block; }
+  .brand-foot img { height: 80px; }
+  .social { list-style: none; margin: 20px 0 0; padding: 0; display: flex; gap: 20px; }
+  .foot-grid { grid-template-columns: 1.3fr 0.8fr 1fr 1.1fr 1fr !important; }
+  @media (max-width: 1120px) and (min-width: 861px) { .nav-links { gap: 22px; } .nav-links a { font-size: 14px; } }
+  @media (max-width: 1000px) { .foot-grid { grid-template-columns: 1fr 1fr 1fr !important; } .foot-about { grid-column: 1 / -1; } }
+  @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 400px) { .foot-grid { grid-template-columns: 1fr !important; } }
+  /* ---------- Full-width scaling for large screens ---------- */
+  @media (min-width: 1500px) {
+    body { font-size: 18px; }
+    main h1 { font-size: clamp(58px, 4vw, 86px) !important; }
+    .section-head h2, .why-intro h2, .sol-intro h2, .cta h2 { font-size: clamp(46px, 3vw, 64px) !important; }
+    .form-head h2 { font-size: 40px !important; }
+    .hero-sub, .sub { font-size: 20px !important; }
+    .pillar h3, .step h3, .sol-title h3 { font-size: clamp(25px, 1.6vw, 32px) !important; }
+    .pillar p.body, .checks p, .step p, .sol-body p, .assure-item p { font-size: 17px; }
+    .route-title { font-size: clamp(30px, 2vw, 38px) !important; }
+    .hero-visual { width: 100%; max-width: 780px; justify-self: end; }
+    .nav-links { gap: 40px; }
+    .nav-links a { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="home.html" aria-label="Content People, home"><img src="assets/images/logo.png" alt="Content People" width="103" height="85"></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="primary-nav">
+      <li><a href="home.html" aria-current="page">Home</a></li>
+      <li><a href="capital-strategy.html">Money &amp; Strategy</a></li>
+      <li><a href="technology.html">Tech &amp; Architecture</a></li>
+      <li><a href="branding-media.html">Branding &amp; Content</a></li>
+      <li><a href="contact.html" class="btn btn-primary btn-sm">Book a consultation</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>The Growth Partner for Scaling Businesses &amp; SMEs.</h1>
+        <p class="hero-sub">Scaling a business requires more than just marketing. It demands liquidity, seamless technology, and strategic positioning. We connect all three into one sustainable growth strategy.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact.html">Book a strategy session</a>
+          <a class="btn btn-ghost" href="#pillars">Explore our services</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="flow" viewBox="0 0 560 420">
+          <line class="grid-line" x1="0" y1="105" x2="560" y2="105"/>
+          <line class="grid-line" x1="0" y1="210" x2="560" y2="210"/>
+          <line class="grid-line" x1="0" y1="315" x2="560" y2="315"/>
+          <line class="grid-line" x1="300" y1="20" x2="300" y2="400"/>
+
+          <text x="20" y="92" class="fade">Capital</text>
+          <text x="20" y="197" class="fade">Technology</text>
+          <text x="20" y="302" class="fade">Brand</text>
+
+          <path class="stream" d="M24 105 H130 C 220 105, 220 210, 300 210"/>
+          <path class="stream" d="M24 210 H300"/>
+          <path class="stream" d="M24 315 H130 C 220 315, 220 210, 300 210"/>
+          <path class="growth" d="M300 210 C 380 210, 420 150, 520 70"/>
+
+          <circle class="dot fade" cx="24" cy="105" r="4.5"/>
+          <circle class="dot fade" cx="24" cy="210" r="4.5"/>
+          <circle class="dot fade" cx="24" cy="315" r="4.5"/>
+
+          <circle class="ring fade mid" cx="300" cy="210" r="14"/>
+          <circle class="node fade mid" cx="300" cy="210" r="5"/>
+          <circle class="node fade late" cx="520" cy="70" r="5"/>
+          <text x="520" y="44" text-anchor="end" class="end fade late">One growth strategy</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients" aria-label="Clients">
+    <div class="wrap clients-row">
+      <span class="clients-label">Trusted by growing businesses</span>
+      <div class="logos">
+        <img src="https://content-people-web.vercel.app/logos/migrado_logo.png" alt="MiGrado" onerror="this.remove()">
+        <img src="https://content-people-web.vercel.app/logos/lucidlingos_logo.png" alt="LucidLingos" onerror="this.remove()">
+        <img src="https://content-people-web.vercel.app/logos/workzu_logo.png" alt="Workzu" onerror="this.remove()">
+        <img src="https://content-people-web.vercel.app/logos/glorodavionics_logo.png" alt="Glorod Avionics" onerror="this.remove()">
+        <img src="https://content-people-web.vercel.app/logos/graycodeanalytica_logo.png" alt="Graycode Analytica" onerror="this.remove()">
+        <img src="https://content-people-web.vercel.app/logos/blueprintcreatives_logo.png" alt="Blueprint Creatives" onerror="this.remove()">
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="block" id="pillars">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Three core growth pillars, one accountable partner.</h2>
+        <p>Most growing companies manage funding, technology and brand through separate vendors. We plan and deliver them together, so each one strengthens the others.</p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar">
+          <svg class="pillar-icon" viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M4 38 H40"/><path d="M9 38 V24 M17 38 V18 M25 38 V21 M33 38 V11"/><path d="M6 20 L16 12 L24 16 L38 5"/><path d="M32 5 H38 V11"/>
+          </svg>
+          <h3>Money &amp; Strategy</h3>
+          <p class="kicker">Capital Access &amp; Financial Architecture</p>
+          <p class="body">Fuel your operations without diluting equity. We partner with top banking networks to help you secure business overdrafts, structured loans against property, and strategic growth capital.</p>
+          <a class="text-link" href="capital-strategy.html">Learn about business funding</a>
+        </article>
+
+        <article class="pillar">
+          <svg class="pillar-icon" viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="4" y="6" width="36" height="24" rx="1"/><path d="M4 24 H40"/><path d="M16 38 H28 M22 30 V38"/><path d="M11 17 L15 13 L19 17 M25 13 H33 M25 17 H30"/>
+          </svg>
+          <h3>Tech &amp; Architecture</h3>
+          <p class="kicker">Enterprise-Grade Digital Systems</p>
+          <p class="body">We design and build heavy-duty software solutions. From high-throughput e-commerce ecosystems and custom mobile applications to unified executive dashboards that keep your data in sync.</p>
+          <a class="text-link" href="technology.html">Learn about tech architecture</a>
+        </article>
+
+        <article class="pillar">
+          <svg class="pillar-icon" viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+            <circle cx="22" cy="22" r="17"/><circle cx="22" cy="22" r="9"/><circle cx="22" cy="22" r="1.8" fill="currentColor"/><path d="M22 2 V8 M22 36 V42 M2 22 H8 M36 22 H42"/>
+          </svg>
+          <h3>Branding &amp; Content</h3>
+          <p class="kicker">Corporate Identity &amp; Storytelling</p>
+          <p class="body">Elevate your market presence with strong brand authority. We engineer corporate visual identities, positioning strategies, and high-production video content that builds immediate trust with investors and clients.</p>
+          <a class="text-link" href="branding-media.html">Learn about branding &amp; media</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="block why">
+    <div class="wrap why-grid">
+      <div class="why-intro">
+        <h2>Why Businesses Choose Content People</h2>
+        <p>We work as an extension of your leadership team: close to the numbers, hands-on with delivery, and clear about what each decision means for your growth.</p>
+      </div>
+      <ul class="checks">
+        <li>
+          <svg class="check" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.2 L9.6 14.2 L15.5 8"/></svg>
+          <h3>Complete Business Alignment</h3>
+          <p>We don't look at marketing, tech, or capital in isolation. We align all three to drive measurable top-line growth.</p>
+        </li>
+        <li>
+          <svg class="check" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.2 L9.6 14.2 L15.5 8"/></svg>
+          <h3>Direct Banking &amp; Institutional Ties</h3>
+          <p>Gain direct, streamlined access to top banks for debt financing, LAP, and working capital lines without corporate friction.</p>
+        </li>
+        <li>
+          <svg class="check" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.2 L9.6 14.2 L15.5 8"/></svg>
+          <h3>In-House Engineering Excellence</h3>
+          <p>We don't outsource critical projects. Our core team builds your digital tools, custom apps, and e-commerce platforms directly.</p>
+        </li>
+        <li>
+          <svg class="check" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.2 L9.6 14.2 L15.5 8"/></svg>
+          <h3>Straight-Talking Partners</h3>
+          <p>No agency jargon, buzzwords, or vanity metrics. Just clear strategy, practical implementation, and direct bottom-line results.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap cta-grid">
+      <div>
+        <h2>Let's Discuss Your Next Phase of Growth.</h2>
+        <p>Tell us where your business is today and where you want it to be. We'll outline what it takes in capital, technology and brand to get there.</p>
+      </div>
+      <div class="cta-side">
+        <a class="btn btn-primary" href="contact.html">Request a strategic advisory call</a>
+        <div class="nda">
+          <svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="8" width="12" height="9" rx="1"/><path d="M5.5 8 V5.5 a3.5 3.5 0 0 1 7 0 V8"/></svg>
+          <span>All disclosures, strategic discussions and financial information shared with Content People are governed by strict non-disclosure commitments.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand brand-foot" href="home.html" aria-label="Content People, home"><img src="assets/images/logo.png" alt="Content People" width="103" height="85"></a>
+        <p>Capital, technology and brand for scaling businesses and SMEs.</p>
+        <ul class="social">
+          <li><a href="https://www.linkedin.com/company/contentpeopleco/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/contentpeopleco/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <nav aria-label="Explore">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="index.html">Find your service</a></li>
+          <li><a href="technology.html#work">Our work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="capital-strategy.html">Money &amp; Strategy</a></li>
+          <li><a href="technology.html">Tech &amp; Architecture</a></li>
+          <li><a href="branding-media.html">Branding &amp; Content</a></li>
+          <li><a href="contact.html">Book a consultation</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>India Regional Office</h4>
+        <address>
+          Unit 402, Kalpataru Square<br>Andheri East, Mumbai 400059<br>
+          <a href="tel:+919833041726">+91 98330 41726</a><br>
+          <a href="mailto:hello@contentpeople.in">hello@contentpeople.in</a>
+        </address>
+      </div>
+      <div>
+        <h4>Saudi Arabia (KSA) Office</h4>
+        <address>Address to be confirmed<br>Kingdom of Saudi Arabia</address>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Content People. All rights reserved.</span>
+      <a href="#main">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var header = document.querySelector('.site-header');
+    var toggle = document.querySelector('.menu-toggle');
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        header.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

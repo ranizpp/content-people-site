@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Capital Structuring &amp; Strategic Growth Consultancy | Content People</title>
+<meta name="description" content="Access the debt financing, working capital, and market strategies required to scale your business safely.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #13212E;
+    --ink-2: #1B2C3B;
+    --paper: #F6F7F5;
+    --white: #FFFFFF;
+    --stone: #DDE1DE;
+    --mist: #5F6E7A;
+    --brass: #8F6A00;
+    --brass-soft: #F8C200;
+    --on-ink: #E9EDEF;
+    --on-ink-dim: #9AA8B3;
+    --line-ink: rgba(233, 237, 239, 0.14);
+
+    --font: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --wrap: none;
+    --gutter: clamp(20px, 4.5vw, 88px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 17px; line-height: 1.6;
+    color: var(--ink); background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--white); padding: 8px 14px; z-index: 100; }
+  .skip:focus { left: 8px; }
+
+  /* ---------- Header (shared) ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--ink); border-bottom: 1px solid var(--line-ink);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); font-weight: 600; font-size: 18px; letter-spacing: -0.01em; }
+  .brand-mark { width: 26px; height: 26px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { color: var(--on-ink-dim); text-decoration: none; font-size: 15px; transition: color .2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a[aria-current="page"] { color: var(--white); box-shadow: inset 0 -1px 0 var(--brass-soft); padding-bottom: 4px; }
+  .nav-links a.btn { color: var(--ink); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 48px; padding: 0 24px;
+    font: 500 15px/1 var(--font); text-decoration: none;
+    border-radius: 2px; border: 1px solid transparent;
+    transition: background .2s, color .2s, border-color .2s; cursor: pointer;
+  }
+  .btn-primary { background: var(--white); color: var(--ink); }
+  .btn-primary:hover { background: var(--brass-soft); }
+  .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.28); }
+  .btn-ghost:hover { border-color: var(--white); }
+  .btn-sm { height: 40px; padding: 0 18px; font-size: 14px; }
+
+  .menu-toggle { display: none; background: none; border: 0; color: var(--white); width: 44px; height: 44px; cursor: pointer; padding: 10px; }
+  .menu-toggle span { display: block; height: 1.5px; background: currentColor; margin: 6px 0; transition: transform .25s, opacity .25s; }
+  .menu-open .menu-toggle span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+  .menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  /* ---------- Hero ---------- */
+  .hero { background: var(--ink); color: var(--on-ink); padding: clamp(48px, 7vw, 88px) 0 clamp(64px, 9vw, 112px); overflow: hidden; }
+  .crumbs { font-size: 14px; color: var(--on-ink-dim); margin: 0 0 clamp(40px, 6vw, 72px); }
+  .crumbs a { text-decoration: none; }
+  .crumbs a:hover { color: var(--white); }
+  .crumbs span { margin: 0 10px; opacity: .5; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+  .hero h1 {
+    margin: 0 0 26px; color: var(--white);
+    font-size: clamp(38px, 4.4vw, 58px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 600;
+    max-width: 16ch;
+  }
+  .hero-sub { margin: 0 0 40px; color: var(--on-ink-dim); font-size: clamp(17px, 1.5vw, 19px); line-height: 1.65; max-width: 46ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* Flow diagram: capital lane in focus */
+  .flow { width: 100%; height: auto; }
+  .flow .grid-line { stroke: rgba(233,237,239,.06); stroke-width: 1; }
+  .flow .muted { fill: none; stroke: rgba(233,237,239,.16); stroke-width: 1.25; }
+  .flow .focus { fill: none; stroke: var(--brass-soft); stroke-width: 2; }
+  .flow .dot { fill: var(--ink); stroke: rgba(233,237,239,.3); stroke-width: 1.25; }
+  .flow .dot.on { stroke: var(--brass-soft); fill: var(--brass-soft); }
+  .flow .node { fill: var(--brass-soft); }
+  .flow text { font-family: var(--font); font-size: 14px; fill: rgba(154,168,179,.55); }
+  .flow text.on { fill: var(--brass-soft); font-weight: 500; }
+  .flow .focus { stroke-dasharray: 800; stroke-dashoffset: 800; animation: draw 2s cubic-bezier(.6,.1,.2,1) .2s forwards; }
+  .flow .fade { opacity: 0; animation: fade .6s ease 1.9s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+
+  /* ---------- Solutions ---------- */
+  section.block { padding: clamp(80px, 11vw, 136px) 0; }
+  .sol-grid { display: grid; grid-template-columns: 4fr 7fr; gap: clamp(40px, 7vw, 104px); }
+  .sol-intro { position: sticky; top: 120px; align-self: start; }
+  .sol-intro h2 { margin: 0 0 20px; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 600; max-width: 14ch; }
+  .sol-intro p { margin: 0; color: var(--mist); max-width: 36ch; }
+  .phase-key { margin: 36px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; font-size: 15px; color: var(--mist); }
+  .phase-key li { display: flex; align-items: center; gap: 12px; }
+  .phase-key i { display: inline-block; width: 26px; height: 2px; background: var(--ink); }
+  .phase-key li:last-child i { background: var(--brass); }
+
+  .steps { list-style: none; margin: 0; padding: 0; position: relative; }
+  .step {
+    position: relative;
+    display: grid; grid-template-columns: 72px 1fr; gap: 8px;
+    padding: 0 0 56px;
+  }
+  .step:last-child { padding-bottom: 0; }
+  /* vertical rail linking the sequence */
+  .step::before {
+    content: ""; position: absolute; left: 23px; top: 48px; bottom: 0; width: 1px; background: var(--stone);
+  }
+  .step:last-child::before { display: none; }
+  .step-num {
+    width: 47px; height: 47px; border-radius: 50%;
+    border: 1px solid var(--ink); background: var(--paper);
+    display: grid; place-items: center;
+    font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums;
+    position: relative; z-index: 1;
+  }
+  .step.market .step-num { border-color: var(--brass); color: var(--brass); }
+  .step.market::after {
+    content: ""; position: absolute; left: 23px; top: -56px; height: 56px; width: 1px;
+    background: linear-gradient(var(--stone), var(--brass));
+  }
+  .step-body { padding-top: 8px; padding-bottom: 48px; border-bottom: 1px solid var(--stone); }
+  .step:last-child .step-body { border-bottom: 0; padding-bottom: 0; }
+  .step h3 { margin: 0 0 12px; font-size: clamp(21px, 2vw, 25px); line-height: 1.25; letter-spacing: -0.02em; font-weight: 600; }
+  .step p { margin: 0; color: var(--mist); line-height: 1.75; max-width: 58ch; }
+  .ticket {
+    display: inline-flex; gap: 10px; align-items: baseline;
+    margin-top: 20px; padding: 8px 14px;
+    background: var(--white); border: 1px solid var(--stone); border-radius: 2px;
+    font-size: 14px; color: var(--mist);
+  }
+  .ticket strong { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Assurance band ---------- */
+  .assure { background: var(--white); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
+  .assure-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .assure-item { padding: 48px 40px 48px 0; }
+  .assure-item + .assure-item { padding-left: 40px; border-left: 1px solid var(--stone); }
+  .assure-item svg { width: 26px; height: 26px; color: var(--brass); margin-bottom: 20px; }
+  .assure-item h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  .assure-item p { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.7; max-width: 34ch; }
+
+  /* ---------- CTA ---------- */
+  .cta { background: var(--ink); color: var(--on-ink); padding: clamp(80px, 10vw, 120px) 0; }
+  .cta-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: end; }
+  .cta h2 { margin: 0 0 20px; color: var(--white); font-size: clamp(32px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.035em; font-weight: 600; max-width: 17ch; }
+  .cta p { margin: 0; color: var(--on-ink-dim); max-width: 48ch; }
+  .cta-side { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  .nda { display: flex; gap: 14px; padding-top: 24px; border-top: 1px solid var(--line-ink); font-size: 14px; color: var(--on-ink-dim); line-height: 1.6; }
+  .nda svg { flex: none; width: 18px; height: 18px; color: var(--brass-soft); margin-top: 2px; }
+
+  /* ---------- Other pillars ---------- */
+  .others { padding: clamp(64px, 8vw, 96px) 0; }
+  .others h2 { margin: 0 0 28px; font-size: 15px; font-weight: 500; color: var(--mist); }
+  .others-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--stone); }
+  .other {
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding: 32px 0; text-decoration: none; border-bottom: 1px solid var(--stone);
+  }
+  .other + .other { padding-left: 40px; border-left: 1px solid var(--stone); }
+  .other:first-child { padding-right: 40px; }
+  .other small { display: block; font-size: 14px; color: var(--mist); margin-bottom: 4px; }
+  .other strong { font-size: clamp(20px, 2vw, 24px); font-weight: 500; letter-spacing: -0.02em; }
+  .other .go { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--stone); display: grid; place-items: center; transition: background .25s, color .25s, border-color .25s; }
+  .other .go svg { width: 16px; height: 16px; }
+  .other:hover .go { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+  /* ---------- Footer (shared) ---------- */
+  footer { background: var(--ink-2); color: var(--on-ink-dim); padding: 72px 0 calc(32px + env(safe-area-inset-bottom, 0px)); font-size: 15px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 56px; border-bottom: 1px solid var(--line-ink); }
+  footer h4 { margin: 0 0 16px; color: var(--white); font-size: 15px; font-weight: 500; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  footer a { text-decoration: none; transition: color .2s; }
+  footer a:hover { color: var(--white); }
+  footer address { font-style: normal; line-height: 1.7; }
+  .foot-about p { max-width: 32ch; margin: 18px 0 0; }
+  .foot-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 28px; font-size: 14px; }
+  .foot-bottom nav { display: flex; gap: 24px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1000px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 560px; }
+    .sol-grid { grid-template-columns: 1fr; }
+    .sol-intro { position: static; }
+    .assure-grid { grid-template-columns: 1fr; }
+    .assure-item, .assure-item + .assure-item { padding: 36px 0; border-left: 0; }
+    .assure-item + .assure-item { border-top: 1px solid var(--stone); }
+    .cta-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 860px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+      position: fixed; left: 0; right: 0; top: calc(76px + env(safe-area-inset-top, 0px));
+      flex-direction: column; align-items: flex-start; gap: 0;
+      background: var(--ink); padding: 8px var(--gutter) 28px; border-bottom: 1px solid var(--line-ink);
+      transform: translateY(-8px); opacity: 0; visibility: hidden;
+      transition: opacity .2s, transform .2s, visibility .2s;
+    }
+    .menu-open .nav-links { transform: none; opacity: 1; visibility: visible; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 14px 0; font-size: 17px; border-bottom: 1px solid var(--line-ink); }
+    .nav-links a[aria-current="page"] { box-shadow: none; padding-bottom: 14px; color: var(--brass-soft); }
+    .nav-links li:last-child a { border: 0; margin-top: 20px; display: inline-flex; padding: 0 22px; }
+    .others-grid { grid-template-columns: 1fr; }
+    .other, .other + .other, .other:first-child { padding: 28px 0; border-left: 0; }
+  }
+  @media (max-width: 640px) {
+    .step { grid-template-columns: 56px 1fr; }
+    .step-num { width: 40px; height: 40px; font-size: 14px; }
+    .step::before, .step.market::after { left: 19.5px; }
+    .step::before { top: 40px; }
+    .foot-grid { grid-template-columns: 1fr; }
+    .hero-actions .btn { flex: 1 1 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .flow .focus { animation: none; stroke-dashoffset: 0; }
+    .flow .fade { animation: none; opacity: 1; }
+    * { transition: none !important; }
+  }
+
+  /* ---------- Logo & footer additions ---------- */
+  .brand img { height: 60px; width: auto; display: block; }
+  .brand-foot img { height: 80px; }
+  .social { list-style: none; margin: 20px 0 0; padding: 0; display: flex; gap: 20px; }
+  .foot-grid { grid-template-columns: 1.3fr 0.8fr 1fr 1.1fr 1fr !important; }
+  @media (max-width: 1120px) and (min-width: 861px) { .nav-links { gap: 22px; } .nav-links a { font-size: 14px; } }
+  @media (max-width: 1000px) { .foot-grid { grid-template-columns: 1fr 1fr 1fr !important; } .foot-about { grid-column: 1 / -1; } }
+  @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 400px) { .foot-grid { grid-template-columns: 1fr !important; } }
+  /* ---------- Full-width scaling for large screens ---------- */
+  @media (min-width: 1500px) {
+    body { font-size: 18px; }
+    main h1 { font-size: clamp(58px, 4vw, 86px) !important; }
+    .section-head h2, .why-intro h2, .sol-intro h2, .cta h2 { font-size: clamp(46px, 3vw, 64px) !important; }
+    .form-head h2 { font-size: 40px !important; }
+    .hero-sub, .sub { font-size: 20px !important; }
+    .pillar h3, .step h3, .sol-title h3 { font-size: clamp(25px, 1.6vw, 32px) !important; }
+    .pillar p.body, .checks p, .step p, .sol-body p, .assure-item p { font-size: 17px; }
+    .route-title { font-size: clamp(30px, 2vw, 38px) !important; }
+    .hero-visual { width: 100%; max-width: 780px; justify-self: end; }
+    .nav-links { gap: 40px; }
+    .nav-links a { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="home.html" aria-label="Content People, home"><img src="assets/images/logo.png" alt="Content People" width="103" height="85"></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="primary-nav">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="capital-strategy.html" aria-current="page">Money &amp; Strategy</a></li>
+      <li><a href="technology.html">Tech &amp; Architecture</a></li>
+      <li><a href="branding-media.html">Branding &amp; Content</a></li>
+      <li><a href="contact.html" class="btn btn-primary btn-sm">Book a consultation</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="home.html">Home</a><span aria-hidden="true">/</span>Money &amp; Strategy
+      </nav>
+      <div class="hero-grid">
+        <div>
+          <h1>Capital Structuring &amp; Strategic Growth Consultancy.</h1>
+          <p class="hero-sub">Access the debt financing, working capital, and market strategies required to scale your business safely.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html?interest=capital">Schedule a confidential strategy session</a>
+            <a class="btn btn-ghost" href="#solutions">View our solutions</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="flow" viewBox="0 0 560 420">
+            <line class="grid-line" x1="0" y1="105" x2="560" y2="105"/>
+            <line class="grid-line" x1="0" y1="210" x2="560" y2="210"/>
+            <line class="grid-line" x1="0" y1="315" x2="560" y2="315"/>
+            <line class="grid-line" x1="300" y1="20" x2="300" y2="400"/>
+
+            <text x="20" y="92" class="on">Capital</text>
+            <text x="20" y="197">Technology</text>
+            <text x="20" y="302">Brand</text>
+
+            <path class="muted" d="M24 210 H300"/>
+            <path class="muted" d="M24 315 H130 C 220 315, 220 210, 300 210"/>
+            <path class="muted" d="M300 210 C 380 210, 420 150, 520 70"/>
+            <path class="focus" d="M24 105 H130 C 220 105, 220 210, 300 210 C 380 210, 420 150, 520 70"/>
+
+            <circle class="dot on" cx="24" cy="105" r="4.5"/>
+            <circle class="dot" cx="24" cy="210" r="4.5"/>
+            <circle class="dot" cx="24" cy="315" r="4.5"/>
+            <circle class="node" cx="300" cy="210" r="4"/>
+            <circle class="node fade" cx="520" cy="70" r="5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="block" id="solutions">
+    <div class="wrap sol-grid">
+      <div class="sol-intro">
+        <h2>Core Financial &amp; Strategic Solutions</h2>
+        <p>We start with a clear picture of your finances, secure the right mix of capital, then put it to work in the market.</p>
+        <ul class="phase-key" aria-label="Phases">
+          <li><i aria-hidden="true"></i>Steps 1–4: secure your capital</li>
+          <li><i aria-hidden="true"></i>Step 5: deploy it in the market</li>
+        </ul>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <div class="step-body">
+            <h3>Business &amp; Capital Health Audits</h3>
+            <p>We perform a complete assessment of your company's financial health to determine your exact liquidity requirements, debt capacity, and runway before scaling operations.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <div class="step-body">
+            <h3>Bank Overdraft &amp; Working Capital Setup</h3>
+            <p>Ensure smooth day-to-day operations. We assist in negotiating and establishing flexible, low-interest bank overdraft facility limits with top financial institutions.</p>
+            <span class="ticket">Typical facility <strong>₹15 lakh</strong></span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <div class="step-body">
+            <h3>Loan Against Property (LAP) Solutions</h3>
+            <p>Unlock the hidden equity in your commercial or residential real estate assets. We structure substantial, high-value loans at competitive rates through lead institutional lenders.</p>
+            <span class="ticket">Typical facility <strong>₹1.2 crore</strong></span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">4</span>
+          <div class="step-body">
+            <h3>Growth &amp; Expansion Financing</h3>
+            <p>Whether acquiring assets, expanding inventory, or entering new geographical markets, we structure short-term and long-term capital strategies tailored to your timeline.</p>
+            <span class="ticket">Typical facility <strong>₹60 lakh</strong></span>
+          </div>
+        </li>
+        <li class="step market">
+          <span class="step-num" aria-hidden="true">5</span>
+          <div class="step-body">
+            <h3>High-Impact Go-To-Market Strategies</h3>
+            <p>Once your capital structure is secured, we design targeted market acquisition strategies to attract high-value business clients, maximize ROI, and capture market share.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Assurance -->
+  <section class="assure" aria-label="How we work with you">
+    <div class="wrap assure-grid">
+      <div class="assure-item">
+        <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 22 H23 M5 22 V11 M10 22 V11 M16 22 V11 M21 22 V11 M2 11 H24 L13 4 Z"/></svg>
+        <h3>Direct banking relationships</h3>
+        <p>We work with top banks and institutional lenders directly, without layers of intermediaries.</p>
+      </div>
+      <div class="assure-item">
+        <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="13" cy="9" r="4.5"/><path d="M4 23 c0-5 4-8 9-8 s9 3 9 8"/></svg>
+        <h3>One point of contact</h3>
+        <p>We manage the paperwork and follow-ups end to end, so approvals move faster.</p>
+      </div>
+      <div class="assure-item">
+        <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="5" y="11" width="16" height="12" rx="1"/><path d="M8.5 11 V8 a4.5 4.5 0 0 1 9 0 V11"/></svg>
+        <h3>Strict confidentiality</h3>
+        <p>Every financial disclosure you share with us is covered by a non-disclosure commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap cta-grid">
+      <div>
+        <h2>Find out how much capital your business can access.</h2>
+        <p>Start with a confidential conversation about your current finances and growth plans. We'll outline the facilities that fit and the steps to secure them.</p>
+      </div>
+      <div class="cta-side">
+        <a class="btn btn-primary" href="contact.html?interest=capital">Schedule a confidential strategy session</a>
+        <div class="nda">
+          <svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="8" width="12" height="9" rx="1"/><path d="M5.5 8 V5.5 a3.5 3.5 0 0 1 7 0 V8"/></svg>
+          <span>All disclosures, strategic discussions and financial information shared with Content People are governed by strict non-disclosure commitments.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other pillars -->
+  <section class="others">
+    <div class="wrap">
+      <h2>Explore the other growth pillars</h2>
+      <div class="others-grid">
+        <a class="other" href="technology.html">
+          <span><small>Tech &amp; Architecture</small><strong>Software &amp; digital systems</strong></span>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9 H15 M10 4 L15 9 L10 14"/></svg></span>
+        </a>
+        <a class="other" href="branding-media.html">
+          <span><small>Branding &amp; Content</small><strong>Corporate identity &amp; media</strong></span>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9 H15 M10 4 L15 9 L10 14"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand brand-foot" href="home.html" aria-label="Content People, home"><img src="assets/images/logo.png" alt="Content People" width="103" height="85"></a>
+        <p>Capital, technology and brand for scaling businesses and SMEs.</p>
+        <ul class="social">
+          <li><a href="https://www.linkedin.com/company/contentpeopleco/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/contentpeopleco/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <nav aria-label="Explore">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="index.html">Find your service</a></li>
+          <li><a href="technology.html#work">Our work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="capital-strategy.html">Money &amp; Strategy</a></li>
+          <li><a href="technology.html">Tech &amp; Architecture</a></li>
+          <li><a href="branding-media.html">Branding &amp; Content</a></li>
+          <li><a href="contact.html">Book a consultation</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>India Regional Office</h4>
+        <address>
+          Unit 402, Kalpataru Square<br>Andheri East, Mumbai 400059<br>
+          <a href="tel:+919833041726">+91 98330 41726</a><br>
+          <a href="mailto:hello@contentpeople.in">hello@contentpeople.in</a>
+        </address>
+      </div>
+      <div>
+        <h4>Saudi Arabia (KSA) Office</h4>
+        <address>Address to be confirmed<br>Kingdom of Saudi Arabia</address>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Content People. All rights reserved.</span>
+      <a href="#main">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var header = document.querySelector('.site-header');
+    var toggle = document.querySelector('.menu-toggle');
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        header.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

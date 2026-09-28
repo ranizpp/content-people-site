@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Content People | Capital, Technology and Brand Power for Growing Businesses</title>
+<meta name="description" content="Content People helps SMEs secure growth capital, build modern software infrastructure, and command market leadership.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #13212E;
+    --ink-2: #1B2C3B;
+    --white: #FFFFFF;
+    --brass: #8F6A00;
+    --brass-soft: #F8C200;
+    --on-ink: #E9EDEF;
+    --on-ink-dim: #9AA8B3;
+    --line-ink: rgba(233, 237, 239, 0.14);
+
+    --font: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --wrap: none;
+    --gutter: clamp(20px, 4.5vw, 88px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--ink); }
+  body {
+    margin: 0;
+    min-height: 100vh; min-height: 100dvh;
+    display: flex; flex-direction: column;
+    font-family: var(--font);
+    font-size: 17px; line-height: 1.6;
+    color: var(--on-ink);
+    background: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--brass-soft); outline-offset: 4px; border-radius: 2px; }
+
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+
+  /* ---------- Top bar ---------- */
+  .top { border-bottom: 1px solid var(--line-ink); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--white);
+    font-weight: 600; font-size: 18px; letter-spacing: -0.01em;
+  }
+  .brand-mark { width: 26px; height: 26px; }
+  .skip-link {
+    font-size: 15px; color: var(--on-ink-dim); text-decoration: none;
+    border-bottom: 1px solid transparent; padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .skip-link:hover { color: var(--white); border-color: var(--white); }
+
+  /* ---------- Main ---------- */
+  main { flex: 1; display: flex; align-items: center; padding: clamp(56px, 8vh, 96px) 0; }
+  .intro { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: end; margin-bottom: clamp(48px, 7vh, 80px); }
+  h1 {
+    margin: 0;
+    font-size: clamp(36px, 4.4vw, 58px);
+    line-height: 1.06; letter-spacing: -0.035em; font-weight: 600;
+    color: var(--white);
+    max-width: 17ch;
+  }
+  .sub { margin: 0; color: var(--on-ink-dim); font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; max-width: 44ch; }
+
+  .prompt { margin: 0 0 18px; font-size: 15px; color: var(--on-ink-dim); }
+
+  /* ---------- Routes ---------- */
+  .routes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-ink); }
+  .routes li { border-bottom: 1px solid var(--line-ink); }
+  .route {
+    position: relative;
+    display: grid; grid-template-columns: 180px 1fr auto; align-items: center; gap: 32px;
+    padding: 30px 0;
+    text-decoration: none; color: inherit;
+  }
+  /* Each row is one lane of the homepage flow diagram */
+  .lane { position: relative; height: 12px; }
+  .lane::before {
+    content: ""; position: absolute; left: 6px; right: 0; top: 50%; height: 1px;
+    background: rgba(233,237,239,.32);
+    transition: background .3s;
+  }
+  .lane::after {
+    content: ""; position: absolute; left: 6px; right: 0; top: 50%; height: 1.5px; margin-top: -0.25px;
+    background: var(--brass-soft);
+    transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.6,.1,.2,1);
+  }
+  .lane span {
+    position: absolute; left: 0; top: 50%; width: 11px; height: 11px; margin-top: -5.5px;
+    border-radius: 50%; border: 1.25px solid rgba(233,237,239,.6); background: var(--ink);
+    z-index: 1; transition: border-color .3s, background .3s;
+  }
+  .route-area { display: block; font-size: 14px; color: var(--on-ink-dim); margin-bottom: 6px; }
+  .route-title {
+    display: block; color: var(--white);
+    font-size: clamp(21px, 2.3vw, 30px); line-height: 1.2; letter-spacing: -0.025em; font-weight: 500;
+  }
+  .route-desc { display: block; margin-top: 8px; font-size: 15px; color: var(--on-ink-dim); }
+  .route-go {
+    width: 52px; height: 52px; border-radius: 50%;
+    border: 1px solid var(--line-ink);
+    display: grid; place-items: center; color: var(--on-ink);
+    transition: background .3s, border-color .3s, color .3s;
+  }
+  .route-go svg { width: 18px; height: 18px; transition: transform .3s; }
+
+  .route:hover .lane::after, .route:focus-visible .lane::after { transform: scaleX(1); }
+  .route:hover .lane span, .route:focus-visible .lane span { border-color: var(--brass-soft); background: var(--brass-soft); }
+  .route:hover .route-go, .route:focus-visible .route-go { background: var(--white); border-color: var(--white); color: var(--ink); }
+  .route:hover .route-go svg, .route:focus-visible .route-go svg { transform: translateX(2px); }
+  .route:focus-visible { outline-offset: -2px; }
+
+  /* ---------- Bottom bar ---------- */
+  .bottom { border-top: 1px solid var(--line-ink); font-size: 14px; color: var(--on-ink-dim); }
+  .bottom .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; padding-top: 22px; padding-bottom: 22px; }
+  .bottom a { text-decoration: none; transition: color .2s; }
+  .bottom a:hover { color: var(--white); }
+  .bottom .contacts { display: flex; gap: 28px; flex-wrap: wrap; }
+
+  /* ---------- Load sequence ---------- */
+  .reveal { opacity: 0; transform: translateY(10px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .2s; }
+  .d3 { animation-delay: .4s; } .d4 { animation-delay: .52s; } .d5 { animation-delay: .64s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .intro { grid-template-columns: 1fr; align-items: start; }
+    .route { grid-template-columns: 1fr auto; gap: 20px; padding: 26px 0; }
+    .lane { display: none; }
+  }
+  @media (max-width: 480px) {
+    .route-go { width: 44px; height: 44px; }
+    .skip-link { font-size: 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; opacity: 1; transform: none; }
+    * { transition: none !important; }
+  }
+
+  /* ---------- Logo & footer additions ---------- */
+  .brand img { height: 60px; width: auto; display: block; }
+  .brand-foot img { height: 80px; }
+  .social { list-style: none; margin: 20px 0 0; padding: 0; display: flex; gap: 20px; }
+  .foot-grid { grid-template-columns: 1.3fr 0.8fr 1fr 1.1fr 1fr !important; }
+  @media (max-width: 1000px) { .foot-grid { grid-template-columns: 1fr 1fr 1fr !important; } .foot-about { grid-column: 1 / -1; } }
+  @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 400px) { .foot-grid { grid-template-columns: 1fr !important; } }
+  /* ---------- Full-width scaling for large screens ---------- */
+  @media (min-width: 1500px) {
+    body { font-size: 18px; }
+    main h1 { font-size: clamp(52px, 3.3vw, 72px) !important; max-width: 20ch; }
+    .route { grid-template-columns: 240px 1fr auto; padding: 26px 0; }
+    .lane { max-width: 200px; }
+    .section-head h2, .why-intro h2, .sol-intro h2, .cta h2 { font-size: clamp(46px, 3vw, 64px) !important; }
+    .form-head h2 { font-size: 40px !important; }
+    .hero-sub, .sub { font-size: 20px !important; }
+    .pillar h3, .step h3, .sol-title h3 { font-size: clamp(25px, 1.6vw, 32px) !important; }
+    .pillar p.body, .checks p, .step p, .sol-body p, .assure-item p { font-size: 17px; }
+    .route-title { font-size: clamp(30px, 2vw, 38px) !important; }
+    .hero-visual { width: 100%; max-width: 780px; justify-self: end; }
+    .nav-links { gap: 40px; }
+    .nav-links a { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Content People, home"><img src="assets/images/logo.png" alt="Content People" width="103" height="85"></a>
+    <a class="skip-link" href="home.html">View full overview</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="intro">
+      <h1 class="reveal d1">We Help Your Business Scale Safely with Capital, Technology, and Brand Power.</h1>
+      <p class="sub reveal d2">Content People is a high-level business consulting agency empowering SMEs to secure growth capital, build modern software infrastructure, and command market leadership.</p>
+    </div>
+
+    <p class="prompt reveal d2" id="routes-label">What does your business need right now?</p>
+    <ul class="routes" aria-labelledby="routes-label">
+      <li class="reveal d3">
+        <a class="route" href="capital-strategy.html">
+          <span class="lane" aria-hidden="true"><span></span></span>
+          <span>
+            <span class="route-area">Money &amp; Strategy</span>
+            <span class="route-title">I Need Capital &amp; Business Strategy</span>
+            <span class="route-desc">Explore Loan Structuring, Overdrafts, &amp; Growth Capital</span>
+          </span>
+          <span class="route-go" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9 H15 M10 4 L15 9 L10 14"/></svg>
+          </span>
+        </a>
+      </li>
+      <li class="reveal d4">
+        <a class="route" href="technology.html">
+          <span class="lane" aria-hidden="true"><span></span></span>
+          <span>
+            <span class="route-area">Tech &amp; Systems</span>
+            <span class="route-title">I Need Software, Apps, or E-Commerce</span>
+            <span class="route-desc">Explore Digital Systems, Custom IT, &amp; Web Architecture</span>
+          </span>
+          <span class="route-go" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9 H15 M10 4 L15 9 L10 14"/></svg>
+          </span>
+        </a>
+      </li>
+      <li class="reveal d5">
+        <a class="route" href="branding-media.html">
+          <span class="lane" aria-hidden="true"><span></span></span>
+          <span>
+            <span class="route-area">Branding &amp; Media</span>
+            <span class="route-title">I Need Brand Identity &amp; Marketing</span>
+            <span class="route-desc">Explore Corporate Identity, Content Strategy, &amp; Video</span>
+          </span>
+          <span class="route-go" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9 H15 M10 4 L15 9 L10 14"/></svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<footer class="bottom">
+  <div class="wrap">
+    <span>India &amp; Saudi Arabia</span>
+    <div class="contacts">
+      <a href="home.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:+919833041726">+91 98330 41726</a>
+      <a href="mailto:hello@contentpeople.in">hello@contentpeople.in</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
